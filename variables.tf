@@ -1,15 +1,18 @@
-variable "region" {
-  description = "AWS region"
-  default     = "us-west-1"
+variable "organization" {
+  type = string
+  default = "your organization"
 }
 
-variable "instance_type" {
-  description = "Type of EC2 instance to provision"
-  default     = "t2.micro"
+variable "workspace" {
+  type = string
+  default = "your workspace"
 }
 
-variable "instance_name" {
-  description = "EC2 instance name"
-  default     = "Provisioned by Terraform"
+variable "project" {
+  type = string
+  default = "your project name"
 }
 
+variable "credentials" {
+  type = string
+}

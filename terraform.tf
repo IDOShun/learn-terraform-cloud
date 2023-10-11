@@ -1,19 +1,21 @@
 terraform {
 
   cloud {
-    organization = "organization-name"
-
+    organization = var.organization
     workspaces {
-      name = "learn-terraform-cloud"
+      name = var.workspace
     }
   }
 
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.28.0"
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 4.8"
     }
   }
+}
 
-  required_version = ">= 0.14.0"
+provider "google" {
+  project     = var.project
+  credentials = var.credentials
 }

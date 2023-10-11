@@ -1,28 +1,15 @@
-provider "aws" {
-  region = var.region
+
+resource "google_compute_network" "default" {
+  name                    = "dev-vpc"
+  auto_create_subnetworks = false
+  mtu                     = 1500
 }
 
-data "aws_ami" "ubuntu" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["099720109477"] # Canonical
-}
-
-resource "aws_instance" "ubuntu" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = var.instance_type
-
-  tags = {
-    Name = var.instance_name
-  }
+resource "google_compute_subnetwork" "default" {
+  name                       = "subnetwork"
+  network                    = google_compute_network.default.self_link
+  ip_cidr_range              = "100.64.0.0/16"
+  region                     = "asia-northeast1"
+  stack_type                 = "IPV4_IPV6"
+  ipv6_access_type           = "EXTERNAL"
 }
