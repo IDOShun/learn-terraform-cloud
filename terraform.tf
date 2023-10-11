@@ -1,7 +1,7 @@
 terraform {
 
   cloud {
-    organization = "retail-ai-x"
+    organization = "your organization"
     workspaces {
       name = "learn-terraform-cloud"
     }
