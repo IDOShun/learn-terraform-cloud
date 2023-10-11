@@ -1,9 +1,9 @@
 terraform {
 
   cloud {
-    organization = var.organization
+    organization = "retail-ai-x"
     workspaces {
-      name = var.workspace
+      name = "learn-terraform-cloud"
     }
   }
 
