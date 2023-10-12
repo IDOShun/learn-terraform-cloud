@@ -1,5 +1,6 @@
 # Learn-terraform-cloud
 This is the repository to learn terraform cloud.
+[zenn article](https://zenn.dev/i_do/articles/5bb18d1fe8088a)
 
 # Deploy flow
 ![diagram](/deploy_flow.png)
