@@ -1,7 +1,10 @@
-# learn-terraform-cloud
+# Learn-terraform-cloud
 This is the repository to learn terraform cloud.
 
-# files
+# Deploy flow
+![diagram](/deploy_flow.png)
+
+# Files
 `main.tf`
 
 Code of gcp resources.
